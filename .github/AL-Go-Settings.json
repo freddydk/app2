@@ -1,8 +1,8 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/freddydk/AL-Go@filesonlyperf",
+  "templateUrl": "https://github.com/freddydk/AL-Go@main",
   "doNotPublishApps": true,
-  "templateSha": "ee68087e13586d70b71783ef7512b36bc926c18b",
+  "templateSha": "ec2fae91135bba81eba6e4754f8923d714863273",
   "trustedSigning": {
     "Endpoint": "https://neu.codesigning.azure.net",
     "Account": "BCCodeSigningTest",

@@ -29,7 +29,7 @@ jobs:
       telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
     steps:
       - name: Dump Workflow Information
-        uses: freddydk/AL-Go/Actions/DumpWorkflowInfo@filesonlyperf
+        uses: freddydk/AL-Go/Actions/DumpWorkflowInfo@main
         with:
           shell: powershell
 
@@ -40,13 +40,13 @@ jobs:
 
       - name: Initialize the workflow
         id: init
-        uses: freddydk/AL-Go/Actions/WorkflowInitialize@filesonlyperf
+        uses: freddydk/AL-Go/Actions/WorkflowInitialize@main
         with:
           shell: powershell
 
       - name: Read settings
         id: ReadSettings
-        uses: freddydk/AL-Go/Actions/ReadSettings@filesonlyperf
+        uses: freddydk/AL-Go/Actions/ReadSettings@main
         with:
           shell: powershell
 
@@ -57,7 +57,7 @@ jobs:
 
       - name: Determine Projects To Build
         id: determineProjectsToBuild
-        uses: freddydk/AL-Go/Actions/DetermineProjectsToBuild@filesonlyperf
+        uses: freddydk/AL-Go/Actions/DetermineProjectsToBuild@main
         with:
           shell: powershell
           maxBuildDepth: ${{ env.workflowDepth }}
@@ -93,7 +93,7 @@ jobs:
 
       - name: Finalize the workflow
         id: PostProcess
-        uses: freddydk/AL-Go/Actions/WorkflowPostProcess@filesonlyperf
+        uses: freddydk/AL-Go/Actions/WorkflowPostProcess@main
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
