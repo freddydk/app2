@@ -1,11 +1,7 @@
 {
   "type": "PTE",
   "templateUrl": "https://github.com/freddydk/AL-Go@issue1433",
+  "useCompilerFolder": true,
   "doNotPublishApps": true,
-  "templateSha": "6f4e10cfccd198e0edb47222be22b53acedbcf25",
-  "trustedSigning": {
-    "Endpoint": "https://neu.codesigning.azure.net",
-    "Account": "BCCodeSigningTest",
-    "CertificateProfile": "BCCodeSigningPublic"
-  }
+  "templateSha": "6f4e10cfccd198e0edb47222be22b53acedbcf25"
 }
