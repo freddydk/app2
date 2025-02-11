@@ -3,5 +3,6 @@
   "templateUrl": "https://github.com/freddydk/AL-Go@issue1288",
   "useCompilerFolder": false,
   "doNotPublishApps": false,
+  "installOnlyReferencedApps": false,
   "templateSha": "5dddad874cb049eb5c7101532b6cc512ba614048"
 }
