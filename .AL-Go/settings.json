@@ -3,5 +3,10 @@
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
-  "installTestApps": [ "https://www.dropbox.com/scl/fi/o706khi8n9d8beb31bu0b/Freddy_app1.common_1.0.23.0.app?rlkey=yu95181gvsr4xq3v4xrqahggc&dl=1" ]
+  "appDependencyProbingPaths": [
+    {
+      "repo": "freddydk/app2lib",
+      "release_Status": "latestBuild"
+    }
+  ]
 }
