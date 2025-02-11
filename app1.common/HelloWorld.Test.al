@@ -1,4 +1,4 @@
-codeunit 50300 "HelloWorld Test"
+codeunit 50300 "HelloWorld Common"
 {
     procedure TestHelloWorldMessage()
     begin
