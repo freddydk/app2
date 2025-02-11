@@ -22,6 +22,12 @@
       "name": "Any",
       "id": "e7320ebb-08b3-4406-b1ec-b4927d3e280b",
       "version": "22.0.0.0"
+    },
+    {
+      "id": "0587c884-2185-46de-9288-39e54397c13c",
+      "name": "app1.common",
+      "publisher": "Freddy",
+      "version": "1.0.0.0"
     }
   ],
   "screenshots": [],
