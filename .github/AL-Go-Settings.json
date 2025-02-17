@@ -1,8 +1,8 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/freddydk/AL-Go@issue1288",
+  "templateUrl": "https://github.com/freddydk/AL-Go@deployerr",
   "useCompilerFolder": false,
   "doNotPublishApps": false,
   "installOnlyReferencedApps": false,
-  "templateSha": "5dddad874cb049eb5c7101532b6cc512ba614048"
+  "templateSha": "c4506ec60ec2fab08cf06ec406f69bee3f74f78c"
 }
