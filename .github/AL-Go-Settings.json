@@ -6,14 +6,14 @@
   "runs-on": "windows-latest",
   "githubRunner": "windows-latest",
   "deployToTest": {
-    "continuousDeployment": false,
+    "continuousDeployment": true,
     "runs-on": [
       "windows-latest",
       "windows-2022"
     ]
   },
   "deployToTest2": {
-    "continuousDeployment": false,
+    "continuousDeployment": true,
     "runs-on": "windows-latest, windows-2022"
   },
   "installOnlyReferencedApps": false,
