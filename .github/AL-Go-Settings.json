@@ -3,6 +3,16 @@
   "templateUrl": "https://github.com/freddydk/AL-Go@issue798",
   "useCompilerFolder": true,
   "doNotPublishApps": true,
+  "runs-on": [ "windows-latest" ],
+  "githubRunner": [ "windows-latest" ],
+  "deployToTest": {
+    "continuousDeployment": false,
+    "runs-on": [ "windows-latest" ]
+  },
+  "deployToTest2": {
+    "continuousDeployment": false,
+    "runs-on": "windows-latest"
+  },
   "installOnlyReferencedApps": false,
   "templateSha": "e3f72c4336d15db3e3d9a894e24af4a57ed40606"
 }
