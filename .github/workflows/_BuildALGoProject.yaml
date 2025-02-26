@@ -99,7 +99,7 @@ jobs:
           lfs: true
 
       - name: Read settings
-        uses: freddydk/AL-Go/Actions/ReadSettings@issue798
+        uses: freddydk/AL-Go/Actions/ReadSettings@issue1182
         with:
           shell: ${{ inputs.shell }}
           project: ${{ inputs.project }}
@@ -108,7 +108,7 @@ jobs:
 
       - name: Determine whether to build project
         id: DetermineBuildProject
-        uses: freddydk/AL-Go/Actions/DetermineBuildProject@issue798
+        uses: freddydk/AL-Go/Actions/DetermineBuildProject@issue1182
         with:
           shell: ${{ inputs.shell }}
           skippedProjectsJson: ${{ inputs.skippedProjectsJson }}
@@ -118,7 +118,7 @@ jobs:
       - name: Read secrets
         id: ReadSecrets
         if: steps.DetermineBuildProject.outputs.BuildIt == 'True' && github.event_name != 'pull_request'
-        uses: freddydk/AL-Go/Actions/ReadSecrets@issue798
+        uses: freddydk/AL-Go/Actions/ReadSecrets@issue1182
         with:
           shell: ${{ inputs.shell }}
           gitHubSecrets: ${{ toJson(secrets) }}
@@ -136,7 +136,7 @@ jobs:
       - name: Determine ArtifactUrl
         id: determineArtifactUrl
         if: steps.DetermineBuildProject.outputs.BuildIt == 'True'
-        uses: freddydk/AL-Go/Actions/DetermineArtifactUrl@issue798
+        uses: freddydk/AL-Go/Actions/DetermineArtifactUrl@issue1182
         with:
           shell: ${{ inputs.shell }}
           project: ${{ inputs.project }}
@@ -151,7 +151,7 @@ jobs:
       - name: Download Project Dependencies
         id: DownloadProjectDependencies
         if: steps.DetermineBuildProject.outputs.BuildIt == 'True'
-        uses: freddydk/AL-Go/Actions/DownloadProjectDependencies@issue798
+        uses: freddydk/AL-Go/Actions/DownloadProjectDependencies@issue1182
         env:
           Secrets: '${{ steps.ReadSecrets.outputs.Secrets }}'
         with:
@@ -162,7 +162,7 @@ jobs:
           baselineWorkflowRunId: ${{ inputs.baselineWorkflowRunId }}
 
       - name: Build
-        uses: freddydk/AL-Go/Actions/RunPipeline@issue798
+        uses: freddydk/AL-Go/Actions/RunPipeline@issue1182
         if: steps.DetermineBuildProject.outputs.BuildIt == 'True'
         env:
           Secrets: '${{ steps.ReadSecrets.outputs.Secrets }}'
@@ -180,7 +180,7 @@ jobs:
       - name: Sign
         id: sign
         if: steps.DetermineBuildProject.outputs.BuildIt == 'True' && inputs.signArtifacts && env.doNotSignApps == 'False' && (env.keyVaultCodesignCertificateName != '' || (fromJson(env.trustedSigning).Endpoint != '' && fromJson(env.trustedSigning).Account != '' && fromJson(env.trustedSigning).CertificateProfile != ''))
-        uses: freddydk/AL-Go/Actions/Sign@issue798
+        uses: freddydk/AL-Go/Actions/Sign@issue1182
         with:
           shell: ${{ inputs.shell }}
           azureCredentialsJson: '${{ fromJson(steps.ReadSecrets.outputs.Secrets).AZURE_CREDENTIALS }}'
@@ -188,7 +188,7 @@ jobs:
 
       - name: Calculate Artifact names
         id: calculateArtifactsNames
-        uses: freddydk/AL-Go/Actions/CalculateArtifactNames@issue798
+        uses: freddydk/AL-Go/Actions/CalculateArtifactNames@issue1182
         if: success() || failure()
         with:
           shell: ${{ inputs.shell }}
@@ -274,14 +274,14 @@ jobs:
       - name: Analyze Test Results
         id: analyzeTestResults
         if: (success() || failure()) && env.doNotRunTests == 'False' && ((hashFiles(format('{0}/.buildartifacts/TestResults.xml',inputs.project)) != '') || (hashFiles(format('{0}/.buildartifacts/bcptTestResults.json',inputs.project)) != ''))
-        uses: freddydk/AL-Go/Actions/AnalyzeTests@issue798
+        uses: freddydk/AL-Go/Actions/AnalyzeTests@issue1182
         with:
           shell: ${{ inputs.shell }}
           project: ${{ inputs.project }}
 
       - name: Cleanup
         if: always()
-        uses: freddydk/AL-Go/Actions/PipelineCleanup@issue798
+        uses: freddydk/AL-Go/Actions/PipelineCleanup@issue1182
         with:
           shell: ${{ inputs.shell }}
           project: ${{ inputs.project }}

@@ -1,18 +1,21 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/freddydk/AL-Go@issue798",
+  "templateUrl": "https://github.com/freddydk/AL-Go@issue1182",
   "useCompilerFolder": true,
   "doNotPublishApps": true,
   "runs-on": "windows-latest",
   "githubRunner": "windows-latest",
   "deployToTest": {
     "continuousDeployment": false,
-    "runs-on": [ "windows-latest", "windows-2022" ]
+    "runs-on": [
+      "windows-latest",
+      "windows-2022"
+    ]
   },
   "deployToTest2": {
     "continuousDeployment": false,
     "runs-on": "windows-latest, windows-2022"
   },
   "installOnlyReferencedApps": false,
-  "templateSha": "e3f72c4336d15db3e3d9a894e24af4a57ed40606"
+  "templateSha": "8796e342a7357b4f826acad6849d5e944e898c20"
 }
