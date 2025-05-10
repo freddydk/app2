@@ -4,5 +4,5 @@
   "runs-on": "windows-latest",
   "githubRunner": "windows-latest",
   "installOnlyReferencedApps": false,
-  "templateSha": "8796e342a7357b4f826acad6849d5e944e898c20"
+  "templateSha": "2091117670dd71739fd93f463fc8b0d12ebb58b6"
 }
